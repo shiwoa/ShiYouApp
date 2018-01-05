@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/base_error_state"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:drawablePadding="15dp"
+    android:drawableTop="@mipmap/ic_launcher"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:text="@string/on_retry"
+    android:textColor="@color/colorSubtitleText"
+    android:textSize="@dimen/text_content_size" />

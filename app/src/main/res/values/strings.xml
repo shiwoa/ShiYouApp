@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ShiYouApp</string>
+    <string name="loading">加载中</string>
+    <string name="book_search_hist">搜索你想要的内容</string>
+    <string name="book_booktv">本社图书</string>
+    <string name="book_readtencent">腾讯阅读</string>
+    <string name="book_livecourse">直播课程</string>
+    <string name="book_more">查看全部</string>
+
+
+    <string name="no_data">没有找到数据 :-( ，点击刷新一下</string>
+    <string name="on_retry">数据坏了，点击试着修复一下 :-)</string>
+</resources>

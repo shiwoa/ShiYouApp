@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="12px"
+                android:layout_marginTop="12px"
+                android:background="@drawable/book_search_bg">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18px"
+                        android:background="@drawable/book_search_btn" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10px"
+                        android:text="@string/book_search_hist"
+                        android:textColor="@color/color_bb"
+                        android:textSize="23px" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="398px"
+                android:background="@color/color_f7">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="288px"
+                    android:background="@color/google_blue"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="633px"
+                    android:layout_height="149px"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="30px"
+                    android:background="@drawable/book_white_btn_bg">
+
+                    <LinearLayout
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/book_book_btn" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18px"
+                            android:text="@string/book_booktv"
+                            android:textColor="@color/color_66"
+                            android:textSize="26px" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/book_tencent_btn" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18px"
+                            android:text="@string/book_readtencent"
+                            android:textColor="@color/color_66"
+                            android:textSize="26px" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/book_live" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18px"
+                            android:text="@string/book_livecourse"
+                            android:textColor="@color/color_66"
+                            android:textSize="26px" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="28px"
+                android:layout_marginTop="28px"
+                android:background="@drawable/book_shiyou_bg" />
+
+            <com.jiaoyu.widget.NoScrollGridView
+                android:id="@+id/shiyou_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="3"
+                android:scrollbars="none" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5px"
+                android:layerType="software"
+                android:background="@drawable/book_gray_xuxian"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="85px"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/book_more"
+                    android:textColor="@color/color_320"
+                    android:textSize="26px" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="15px"
+                android:background="@color/color_f7" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="28px"
+                android:layout_marginTop="28px"
+                android:background="@drawable/book_sheke_bg" />
+
+            <com.jiaoyu.widget.NoScrollGridView
+                android:id="@+id/sheke_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="3"
+                android:scrollbars="none" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5px"
+                android:layerType="software"
+                android:background="@drawable/book_gray_xuxian"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="85px"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/book_more"
+                    android:textColor="@color/color_320"
+                    android:textSize="26px" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
