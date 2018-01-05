@@ -25,16 +25,22 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
     def androidDependencies = rootProject.ext.androidDependencies
     implementation androidDependencies.appcompat_v7
     implementation androidDependencies.constraint
-    implementation androidDependencies.design //main----TabLayout
-    implementation androidDependencies.autolayout //屏幕适配
-    implementation androidDependencies.swipeVersion //下拉刷新
-    compile 'com.jakewharton:butterknife:8.8.1' //自动生成代码工具
+    implementation androidDependencies.design
+    //main----TabLayout
+    implementation androidDependencies.autolayout
+    //屏幕适配
+    implementation androidDependencies.swipeVersion
+    //下拉刷新
+    compile 'com.jakewharton:butterknife:8.8.1'
+    //自动生成代码工具
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4' //检测内存泄漏
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    //检测内存泄漏
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    implementation project(':sliderLibrary')
 }
