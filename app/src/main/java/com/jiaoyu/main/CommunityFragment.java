@@ -12,13 +12,24 @@ import com.jiaoyu.shiyou.R;
 
 public class CommunityFragment extends BaseFragment{
 
-    
+    private static CommunityFragment communityFragment;
+
     /**
      * 初始化布局资源文件
      */
     @Override
     protected int initContentView() {
         return R.layout.fra_main_community;
+    }
+
+    /**
+     * 获取本类对象的方法
+     */
+    public static CommunityFragment getInstance() {
+        if (communityFragment == null) {
+            communityFragment = new CommunityFragment();
+        }
+        return communityFragment;
     }
 
     /**

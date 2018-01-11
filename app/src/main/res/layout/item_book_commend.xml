@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="135px"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="21px"
+        android:layout_marginRight="21px"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="77px"
+            android:layout_height="77px"
+
+            android:background="@drawable/defined_user_head" />
+        <TextView
+            android:id="@+id/commend_name"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:layout_marginLeft="30px"
+            android:textSize="25px"
+            android:textColor="@color/color_33"
+            />
+        <ImageView
+            android:id="@+id/commend_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/commend_no"
+            android:layout_marginRight="19px"
+            />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="21px"
+        android:layout_marginRight="21px"
+        android:background="@color/color_f7f7"
+        />
+</LinearLayout>

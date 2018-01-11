@@ -81,7 +81,7 @@ public abstract class BaseActivity extends AutoLayoutActivity implements PageSta
     * @date 2018/1/3 16:17
     * @Description: 关闭的方法
     */
-    public void finish() {
+    public void finishBase() {
         //移出Activity栈
         AppManager.getAppManager().finishActivity(this);
         super.finish();

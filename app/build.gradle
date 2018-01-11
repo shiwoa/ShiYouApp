@@ -17,11 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -35,12 +35,32 @@ dependencies {
     implementation androidDependencies.autolayout
     //屏幕适配
     implementation androidDependencies.swipeVersion
-    //下拉刷新
-    compile 'com.jakewharton:butterknife:8.8.1'
+    //recyclerview
+    implementation androidDependencies.recyclerview
+    //baseRecycler
+    implementation androidDependencies.baseRecycler
+    //图片加载
+    implementation androidDependencies.glide
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
     //自动生成代码工具
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    compile 'com.jakewharton:butterknife:8.8.1'
     //检测内存泄漏
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    //banner
     implementation project(':sliderLibrary')
+    //fragment滑动
+    implementation project(':magicindicator')
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '25.3.0'
+            }
+        }
+    }
 }

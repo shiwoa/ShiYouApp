@@ -29,7 +29,39 @@
         <meta-data
             android:name="design_height"
             android:value="1280" />
-
+        <!-- 书城-课程直播-直播列表 -->
+        <activity android:name=".BookLiveListActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 书城-图书详情 -->
+        <activity android:name=".BookDetailsActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 书城-图书详情-推荐 -->
+        <activity android:name=".BookRecommendActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 书城-本社图书 -->
+        <activity android:name=".BookClassificationActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 书城-直播课程-课程 -->
+        <activity android:name=".BookCourseActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 书城-直播课程-课程搜索 -->
+        <activity android:name=".BookCourseSearchActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 书城-图书课程详情 -->
+        <activity android:name=".BookCourseDetailsActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 登陆 -->
+        <activity android:name="com.jiaoyu.login.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 注册 -->
+        <activity android:name="com.jiaoyu.login.RegisterActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 忘记密码 -->
+        <activity android:name="com.jiaoyu.login.ForgetPwdActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 设置密码 -->
+        <activity android:name="com.jiaoyu.login.SettingPwdActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

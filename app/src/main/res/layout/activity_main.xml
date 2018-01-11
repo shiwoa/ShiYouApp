@@ -7,22 +7,79 @@
     android:orientation="vertical"
     tools:context="com.jiaoyu.main.MainActivity">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
+    <LinearLayout
+        android:id="@+id/fragment_layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tablayout"
-        android:layout_width="match_parent"
-        android:layout_height="100px"
-        app:tabBackground="@drawable/main_selected"
-        app:tabIndicatorColor="#00000000"
-        app:tabMode="fixed"
-        app:tabPaddingTop="2px"
-        app:tabSelectedTextColor="@color/color_20"
-        app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:orientation="horizontal"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:background="@color/White">
+
+        <RadioGroup
+            android:id="@+id/main_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="10px">
+
+            <RadioButton
+                android:id="@+id/main_find_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/main_tab_icon_find"
+                android:gravity="center"
+                android:text="@string/main_find"
+                android:layout_marginTop="5px"
+                android:textColor="@color/color_66"
+                android:textSize="19px" />
+
+            <RadioButton
+                android:id="@+id/main_book_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/main_tab_icon_book"
+                android:gravity="center"
+                android:text="@string/main_book"
+                android:textColor="@color/color_66"
+                android:layout_marginTop="5px"
+                android:textSize="19px" />
+
+            <RadioButton
+                android:id="@+id/main_community_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/main_tab_icon_community"
+                android:gravity="center"
+                android:layout_marginTop="5px"
+                android:text="@string/main_community"
+                android:textColor="@color/color_66"
+                android:textSize="19px" />
+
+            <RadioButton
+                android:id="@+id/main_my_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/main_tab_icon_my"
+                android:gravity="center"
+                android:text="@string/main_my"
+                android:textColor="@color/color_66"
+                android:layout_marginTop="5px"
+                android:textSize="19px" />
+
+        </RadioGroup>
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lib-qr-scan-1.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../app/build/intermediates/exploded-aar/com.netease.scan/lib-qr-scan/1.0.0/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../app/build/intermediates/exploded-aar/com.netease.scan/lib-qr-scan/1.0.0/jars/libs/core-3.1.0.jar!/" />
+      <root url="file://$PROJECT_DIR$/../app/build/intermediates/exploded-aar/com.netease.scan/lib-qr-scan/1.0.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netease.scan/lib-qr-scan/1.0.0/4ca531fff8c45939816948658c5c6240f0f2efc7/lib-qr-scan-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

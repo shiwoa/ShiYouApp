@@ -48,7 +48,7 @@ public class BookAdapter extends BaseAdapter{
         if (view == null){
             vholder = new ViewHolder();
             view = LayoutInflater.from(context).inflate(R.layout.item_book_shiyoy, null);
-            vholder.title = view.findViewById(R.id.title);
+            vholder.title = (TextView) view.findViewById(R.id.title);
             view.setTag(vholder);
         }else{
             vholder = (ViewHolder) view.getTag();

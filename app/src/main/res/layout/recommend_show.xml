@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparency"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="460px"
+        android:layout_height="379px"
+        android:background="@drawable/bg_exit"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40px"
+            android:layout_marginTop="40px"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="94px"
+                android:layout_height="128px"
+                android:background="@drawable/defined_image"
+
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18px"
+                android:layout_marginTop="30px"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loading"
+                    android:textSize="27px"
+                    android:textColor="@color/color_33"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loading"
+                    android:textColor="@color/color_99"
+                    android:textSize="23px"
+                    android:layout_marginTop="16px"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/recommend_liyou"
+            android:textSize="22px"
+            android:textColor="@color/color_bb"
+            android:layout_marginLeft="40px"
+            android:layout_marginTop="49px"
+            android:background="@null"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/color_f7f7"
+            android:layout_marginTop="14px"
+            android:layout_marginLeft="40px"
+            android:layout_marginRight="40px"
+            />
+        <TextView
+            android:id="@+id/recommend_show_confirm"
+            android:layout_width="130px"
+            android:layout_height="54px"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginTop="41px"
+            android:textSize="24px"
+            android:textColor="@color/color_320"
+            android:background="@drawable/line_main"
+            android:text="@string/confirm"
+            />
+    </LinearLayout>
+</LinearLayout>
