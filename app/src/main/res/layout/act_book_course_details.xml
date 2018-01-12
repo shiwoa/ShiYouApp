@@ -15,12 +15,24 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
-            <ImageView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="450px"
+                android:layout_height="405px"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:background="@drawable/defined_image" />
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/defined_image" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/play_btn" />
+            </RelativeLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_marginLeft="30px"
@@ -36,14 +48,16 @@
                 android:paddingLeft="20px"
                 android:textSize="23px" />
             <LinearLayout
+                android:id="@+id/teacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="30px"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/loading"
+                    android:text="@string/teacher"
                     android:textSize="28px"
                     android:textColor="@color/color_33"
                     />

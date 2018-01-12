@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparency"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="478px"
+        android:layout_height="270px"
+        android:background="@drawable/bg_exit"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_tencent_tv"
+            android:textSize="24px"
+            android:textColor="@color/color_99"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_tencent_tvv"
+            android:textSize="24px"
+            android:textColor="@color/color_99"
+            />
+        <TextView
+            android:id="@+id/know"
+            android:layout_width="125px"
+            android:layout_height="52px"
+            android:text="@string/know"
+            android:background="@drawable/line_main"
+            android:gravity="center"
+            android:textSize="24px"
+            android:textColor="@color/color_320"
+            android:layout_marginTop="52px"
+            />
+
+    </LinearLayout>
+</LinearLayout>

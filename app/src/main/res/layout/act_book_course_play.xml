@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_public_head"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="405px"
+        android:background="@drawable/defined_image"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_height="58px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30px"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:text="@string/comment_send"
+        android:textColor="@color/color_bb"
+        android:background="@drawable/book_search_bg"
+        android:paddingLeft="20px"
+        android:textSize="23px" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        >
+
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:id="@+id/magic_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/color_f5" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White" />
+</LinearLayout>

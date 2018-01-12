@@ -22,7 +22,7 @@ import java.util.List;
 public class BookCourseDetailsActivity extends BaseActivity{
 
     private TextView title,recommend; //标题 推荐
-    private LinearLayout back,rightLin; //返回 右侧布局
+    private LinearLayout back,rightLin,teacher; //返回 右侧布局 讲师
     private ImageView rightBtn;
     private RecyclerView contentRec;
     private List<String> listLive = new ArrayList<>();
@@ -43,6 +43,7 @@ public class BookCourseDetailsActivity extends BaseActivity{
     protected void initData() {
         title = (TextView) findViewById(R.id.public_head_title);
         title.setText(R.string.course_details);
+        teacher = (LinearLayout) findViewById(R.id.teacher);
         back = (LinearLayout) findViewById(R.id.public_head_back);
         contentRec = (RecyclerView) findViewById(R.id.content_rec);
         rightLin = (LinearLayout) findViewById(R.id.public_rigthBtn);
@@ -59,8 +60,7 @@ public class BookCourseDetailsActivity extends BaseActivity{
         contentRec.setNestedScrollingEnabled(false);
         adapter = new BookCourseDetailsAdapter(R.layout.item_course_details_content,BookCourseDetailsActivity.this,listLive);
         contentRec.setAdapter(adapter);
-        adapter.setOnItemClickListener((adapter1, view, position) ->
-                ToastUtil.showNormal(BookCourseDetailsActivity.this,"努力开发中"+position));
+        adapter.setOnItemClickListener((adapter1, view, position) -> openActivity(BookCoursePlayActivity.class));
     }
 
     /**
@@ -68,6 +68,8 @@ public class BookCourseDetailsActivity extends BaseActivity{
      */
     @Override
     protected void addListener() {
+        //专家
+        teacher.setOnClickListener(view -> openActivity(BookCourseTeacherActivity.class));
         //返回
         back.setOnClickListener(view -> BookCourseDetailsActivity.this.finish());
     }

@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.jiaoyu.adapter.BookLiveNowAdapter;
 import com.jiaoyu.adapter.BookPlaybackAdapter;
 import com.jiaoyu.base.BaseFragment;
+import com.jiaoyu.shiyou.BookPlayBackActicity;
 import com.jiaoyu.shiyou.R;
 import com.jiaoyu.utils.ToastUtil;
 
@@ -65,17 +66,10 @@ public class BookPlaybackFragment extends BaseFragment{
             playbackList.add("回放测试标题"+i);
 
         }
-//        liveNowRec.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        liveNowRec.setNestedScrollingEnabled(false);
-//        adapter = new BookLiveNowAdapter(R.layout.item_book_live_now,getActivity(),liveType,listLive);
-//        liveNowRec.setAdapter(adapter);
-//        adapter.setOnItemChildClickListener((adapter1, view, position) ->
-//                ToastUtil.showNormal(getActivity(),"点击"+position));
         playbackRec.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new BookPlaybackAdapter(R.layout.item_book_playback,getActivity(),playbackList);
         playbackRec.setAdapter(adapter);
-        adapter.setOnItemClickListener((adapter1, view, position) ->
-                ToastUtil.showNormal(getActivity(),"点击"+position));
+        adapter.setOnItemClickListener((adapter1, view, position) -> openActivity(BookPlayBackActicity.class));
     }
 
     /**

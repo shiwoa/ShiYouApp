@@ -1,10 +1,13 @@
 package com.jiaoyu.main;
 
-import android.content.Intent;
+import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.sliderlibrary.SliderLayout;
 import com.example.sliderlibrary.SliderTypes.BaseSliderView;
@@ -14,6 +17,7 @@ import com.jiaoyu.base.BaseFragment;
 import com.jiaoyu.shiyou.BookClassificationActivity;
 import com.jiaoyu.shiyou.BookDetailsActivity;
 import com.jiaoyu.shiyou.BookLiveListActivity;
+import com.jiaoyu.shiyou.BookSearchActivity;
 import com.jiaoyu.shiyou.R;
 import com.jiaoyu.utils.ToastUtil;
 import com.jiaoyu.widget.NoScrollGridView;
@@ -35,7 +39,9 @@ public class BookFragment extends BaseFragment{
     private List<String> bannerList = new ArrayList<>(); //bannerList
     private BookAdapter shiyouAdapter,shekeAdapter;
     private SliderLayout homeBannerLayout; //banner图
-    private LinearLayout liveList,classList; //直播课程 本社图书
+    private LinearLayout liveList,classList,tencentList; //直播课程 本社图书 腾讯阅读
+    private Dialog dialog;
+    private TextView search_tv; //搜索
 
     /**
      * 初始化布局资源文件
@@ -67,6 +73,8 @@ public class BookFragment extends BaseFragment{
         homeBannerLayout = findViewById(R.id.home_banner_layout);
         liveList = findViewById(R.id.book_live_list);
         classList = findViewById(R.id.book_class_list);
+        tencentList = findViewById(R.id.book_tencent_list);
+        search_tv = findViewById(R.id.search_tv);
     }
 
     /**
@@ -74,6 +82,10 @@ public class BookFragment extends BaseFragment{
      */
     @Override
     protected void initListener() {
+        //搜索
+        search_tv.setOnClickListener(view -> openActivity(BookSearchActivity.class));
+        //知道啦
+        tencentList.setOnClickListener(view -> confirmDiaLog());
         //本社图书
         classList.setOnClickListener(view -> openActivity(BookClassificationActivity.class));
         //直播课程
@@ -142,6 +154,29 @@ public class BookFragment extends BaseFragment{
         homeBannerLayout.setPresetTransformer(SliderLayout.Transformer.ZoomOutSlide);
         homeBannerLayout.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         homeBannerLayout.setDuration(3000);
+    }
+
+    // 确认时显示的diaLog
+    public void confirmDiaLog() {
+        View view = LayoutInflater.from(getActivity()).inflate(
+                R.layout.dialog_tencent_show, null);
+        WindowManager manager = (WindowManager) getActivity().getSystemService(
+                Context.WINDOW_SERVICE);
+        @SuppressWarnings("deprecation")
+        int width = manager.getDefaultDisplay().getWidth();
+        int scree = (width / 3) * 2;
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.width = scree;
+        view.setLayoutParams(layoutParams);
+        dialog = new Dialog(getActivity(), R.style.custom_dialog);
+        dialog.setContentView(view);
+        dialog.setCancelable(false);
+        dialog.show();
+        //确认
+        TextView know = (TextView) view.findViewById(R.id.know);
+        know.setOnClickListener(view1 -> dialog.cancel());
     }
 
 }

@@ -2,7 +2,6 @@ package com.jiaoyu.shiyou;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,10 +10,8 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.jiaoyu.adapter.BookLiveNowAdapter;
 import com.jiaoyu.adapter.BookRecommendAdapter;
 import com.jiaoyu.base.BaseActivity;
-import com.jiaoyu.utils.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,7 +93,7 @@ public class BookRecommendActivity extends BaseActivity{
     // 确认时显示的diaLog
     public void confirmDiaLog() {
         View view = LayoutInflater.from(BookRecommendActivity.this).inflate(
-                R.layout.recommend_show, null);
+                R.layout.dialog_recommend_show, null);
         WindowManager manager = (WindowManager) BookRecommendActivity.this.getSystemService(
                 Context.WINDOW_SERVICE);
         @SuppressWarnings("deprecation")

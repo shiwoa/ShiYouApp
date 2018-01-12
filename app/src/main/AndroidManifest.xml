@@ -50,6 +50,18 @@
         <!-- 书城-图书课程详情 -->
         <activity android:name=".BookCourseDetailsActivity"
             android:screenOrientation="portrait"/>
+        <!-- 专家主页 -->
+        <activity android:name=".BookCourseTeacherActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 书城-直播课程-回放详情 -->
+        <activity android:name=".BookPlayBackActicity"
+            android:screenOrientation="portrait"/>
+        <!-- 书城-图书课程播放 -->
+        <activity android:name=".BookCoursePlayActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 书城-图书课程播放 -->
+        <activity android:name=".BookSearchActivity"
+            android:screenOrientation="portrait"/>
         <!-- 登陆 -->
         <activity android:name="com.jiaoyu.login.LoginActivity"
             android:screenOrientation="portrait"/>

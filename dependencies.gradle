@@ -12,16 +12,25 @@ ext {
     constraintVersion = "1.0.2"
     designVersion = "23.4.0"
     swipeVersion = "1.0.4"
+    recyclerview = "25.4.0"
+    baseRecycler = "2.9.34"
+    glide = "3.7.0"
 
     androidDependencies = [
             appcompat_v7: "com.android.support:appcompat-v7:${otherLibraryVersion}",
             constraint: "com.android.support.constraint:constraint-layout:${constraintVersion}",
-            design: "com.android.support:design:${designVersion}", //main----TabLayout
-            autolayout: "com.zhy:autolayout:1.4.5", //屏幕适配
-            swipeVersion: "com.github.Aspsine:SwipeToLoadLayout:${swipeVersion}", //下拉刷新
-
-//            compile 'com.github.Aspsine:SwipeToLoadLayout:1.0.4'
-
+            //main----TabLayout
+            design: "com.android.support:design:${designVersion}",
+            //屏幕适配
+            autolayout: "com.zhy:autolayout:1.4.5",
+            //下拉刷新
+            swipeVersion: "com.github.Aspsine:SwipeToLoadLayout:${swipeVersion}",
+            //recyclerview
+            recyclerview: "com.android.support:recyclerview-v7:${otherLibraryVersion}",
+            //BaseRecycler
+            baseRecycler: "com.github.CymChad:BaseRecyclerViewAdapterHelper:${baseRecycler}",
+            //图片加载
+            glide: "com.github.bumptech.glide:glide:${glide}",
 
     ]
 }

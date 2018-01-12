@@ -4,6 +4,7 @@
     <string name="book_search_hist">搜索你想要的内容</string>
     <string name="book_booktv">本社图书</string>
     <string name="book_readtencent">腾讯阅读</string>
+    <string name="tencent_book">腾讯图书</string>
     <string name="book_livecourse">直播课程</string>
     <string name="book_more">查看全部</string>
     <string name="book_live_list">直播列表</string>
@@ -55,6 +56,20 @@
     <string name="course_keshi">课时</string>
     <string name="course_content">课程内容</string>
     <string name="course_details">课程详情</string>
+    <string name="open">展开</string>
+    <string name="follow">关注</string>
+    <string name="all_comment">全部评论</string>
+    <string name="course_play">视频播放</string>
+    <string name="collection">收藏</string>
+    <string name="share">分享</string>
+    <string name="teacher_introduce">专栏简介</string>
+    <string name="free_read">免费试读</string>
+    <string name="teacher">专家：</string>
+    <string name="down_tv">下载</string>
+    <string name="know">知道啦</string>
+    <string name="dialog_tencent_tv">非中石油员工会员</string>
+    <string name="dialog_tencent_tvv">没有权限进入此区域哦！</string>
+    <string name="relevant_course">相关课程</string>
 
 
     <string name="no_data">没有找到数据 :-( ，点击刷新一下</string>
