@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jiaoyu.shiyou">
 
+    <!-- 一般权限参 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <application
         android:name="com.jiaoyu.application.DemoApplication"
@@ -42,11 +45,12 @@
         <activity android:name=".BookClassificationActivity"
             android:screenOrientation="portrait"/>
         <!-- 书城-直播课程-课程 -->
-        <activity android:name=".BookCourseActivity"
+        <activity android:name=".BookCourseListActivity"
             android:screenOrientation="portrait"/>
         <!-- 书城-直播课程-课程搜索 -->
         <activity android:name=".BookCourseSearchActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
         <!-- 书城-图书课程详情 -->
         <activity android:name=".BookCourseDetailsActivity"
             android:screenOrientation="portrait"/>
@@ -61,6 +65,18 @@
             android:screenOrientation="portrait"/>
         <!-- 书城-图书课程播放 -->
         <activity android:name=".BookSearchActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 个人信息 -->
+        <activity android:name=".MyInformationActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 系统设置 -->
+        <activity android:name=".MySettingActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 系统设置-修改密码 -->
+        <activity android:name=".MySettingPwdActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 系统设置-系统介绍 -->
+        <activity android:name=".MySettingIntroduceActivity"
             android:screenOrientation="portrait"/>
         <!-- 登陆 -->
         <activity android:name="com.jiaoyu.login.LoginActivity"

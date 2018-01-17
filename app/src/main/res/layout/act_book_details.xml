@@ -15,8 +15,10 @@
         android:layout_marginRight="30px"
         >
         <ImageView
+            android:id="@+id/bookImg"
             android:layout_width="184px"
             android:layout_height="249px"
+            android:scaleType="fitXY"
             android:background="@drawable/defined_image"
             />
         <LinearLayout
@@ -26,6 +28,7 @@
             android:layout_marginLeft="30px"
             >
             <TextView
+                android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="31px"
@@ -34,6 +37,7 @@
                 android:text="@string/loading"
                 />
             <TextView
+                android:id="@+id/num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="23px"
@@ -42,6 +46,7 @@
                 android:text="@string/loading"
                 />
             <TextView
+                android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="28px"
@@ -50,6 +55,7 @@
                 android:text="@string/loading"
                 />
             <TextView
+                android:id="@+id/member"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="27px"
@@ -86,6 +92,7 @@
             />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/down_book_list"
             android:layout_width="0px"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -144,6 +151,7 @@
             android:textColor="@color/color_44"
             />
         <TextView
+            android:id="@+id/bookInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/introduce"
@@ -166,6 +174,7 @@
                 android:textSize="35px"
                 />
             <TextView
+                android:id="@+id/bookAuthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/loading"

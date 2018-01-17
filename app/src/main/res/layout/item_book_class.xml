@@ -4,16 +4,16 @@
     android:orientation="vertical"
     android:layout_height="match_parent">
 <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="145px"
+    android:layout_height="175px"
     android:orientation="vertical"
-    android:gravity="center"
     >
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/icon"
         android:layout_width="78px"
         android:layout_height="78px"
-        android:background="@drawable/defined_user_head"
-
+        android:layout_gravity="center_horizontal"
+        android:src="@color/color_320"
         />
     <TextView
         android:id="@+id/title"
@@ -21,6 +21,8 @@
         android:layout_height="wrap_content"
         android:text="@string/loading"
         android:textSize="27px"
+        android:maxLines="2"
+        android:layout_gravity="center_horizontal"
         android:textColor="@color/color_66"
         android:layout_marginTop="20px"
         />

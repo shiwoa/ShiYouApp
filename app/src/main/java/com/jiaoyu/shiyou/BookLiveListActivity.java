@@ -80,7 +80,7 @@ public class BookLiveListActivity extends BaseActivity{
         //返回
         back.setOnClickListener(view -> BookLiveListActivity.this.finish()); //返回
         //课程
-        course.setOnClickListener(view -> openActivity(BookCourseActivity.class));
+        course.setOnClickListener(view -> openActivity(BookCourseListActivity.class));
     }
 
     /**

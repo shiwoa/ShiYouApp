@@ -8,7 +8,9 @@ import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.jiaoyu.entity.EntityCourse;
 import com.jiaoyu.shiyou.R;
+import com.jiaoyu.utils.Address;
 import com.jiaoyu.utils.GlideUtil;
 
 import java.util.List;
@@ -18,32 +20,25 @@ import java.util.List;
  * 书城-直播列表的适配器
  */
 
-public class BookCourseAdapter extends BaseQuickAdapter<String,BaseViewHolder>{
+public class BookCourseAdapter extends BaseQuickAdapter<EntityCourse,BaseViewHolder>{
 
     private Context context;
-    private String type; //course课程 search搜索
 
-    public BookCourseAdapter(int layoutResId, Context context, @Nullable List<String> data,String string) {
+    public BookCourseAdapter(int layoutResId, Context context, @Nullable List<EntityCourse> data) {
         super(layoutResId, data);
         this.context = context;
-        this.type = string;
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, String item) {
-        TextView playNum = helper.getView(R.id.num);
-        TextView price = helper.getView(R.id.price);
-        if(type.equals("course")){ //课程
-           playNum.setVisibility(View.GONE);
-           price.setVisibility(View.GONE);
-        }else{//课程搜索
-           playNum.setVisibility(View.VISIBLE);
-           price.setVisibility(View.VISIBLE);
-        }
-        helper.setText(R.id.title,item);
+    protected void convert(BaseViewHolder helper, EntityCourse item) {
+        helper.setText(R.id.title,item.getName());
+        helper.setText(R.id.price,"￥"+item.getCurrentprice());
+        helper.setText(R.id.zhang_num,item.getLessionnum()+"节课");
+        helper.setText(R.id.num,item.getPageBuycount()+"人已购买");
+        helper.setText(R.id.teacher,"专家："+item.getOwnerName());
+        helper.setText(R.id.teacher_tab,item.getColTagNames());
         ImageView courseImg = helper.getView(R.id.courseImg);
-        GlideUtil.loadImage(context,
-                "http://static.268xue.com/upload/eduplat/bannerImages/20150721/1437468754570856573.jpg",courseImg);
+        GlideUtil.loadImage(context, Address.IMAGE_NET+item.getMobileLogo(),courseImg);
 
     }
 }

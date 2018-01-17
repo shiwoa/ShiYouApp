@@ -6,6 +6,7 @@
     <color name="transparency">#00000000</color>
 
     <color name="colorSubtitleText">#808080</color>
+    <color name="color_b3">#abafb3</color>
     <color name="google_blue">#3284FF</color>
     <color name="google_red">#FF3424</color>
     <color name="google_red_dark">#BF3428</color>
@@ -31,5 +32,6 @@
     <color name="color_e6">#e6e5e6</color>
     <color name="color_48">#ff4848</color>
     <color name="color_e5">#e5e5e5</color>
+    <color name="color_50">#50000000</color>
 
 </resources>

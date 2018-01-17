@@ -84,12 +84,14 @@
                 android:background="@drawable/login_phone" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="35px"
                 android:background="@null"
                 android:hint="@string/login_hint_number"
                 android:inputType="number"
+                android:text="18301589717"
                 android:textColor="@color/color_bb"
                 android:textSize="29px" />
         </LinearLayout>
@@ -115,11 +117,13 @@
                 android:background="@drawable/login_pwd" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:id="@+id/pwd"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="35px"
                 android:background="@null"
                 android:hint="@string/login_hint_pas"
+                android:text="123456"
                 android:textColor="@color/color_bb"
                 android:textSize="29px" />
         </LinearLayout>
@@ -149,6 +153,7 @@
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

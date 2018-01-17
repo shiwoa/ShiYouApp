@@ -1,5 +1,6 @@
 package com.jiaoyu.base;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import com.jiaoyu.application.DemoApplication;
-import com.jiaoyu.utils.LogUtils;
 import com.jiaoyu.utils.NetWorkUtils;
 import com.jiaoyu.utils.ToastUtil;
 import com.squareup.leakcanary.RefWatcher;
@@ -32,6 +32,8 @@ public abstract class BaseFragment extends Fragment implements PageStateManager.
     private PageStateManager pageStateManager;
     //是否已经有数据
     private boolean isContentAlready;
+    private static ProgressDialog dialog = null;
+
 
     @Nullable
     @Override
@@ -132,6 +134,25 @@ public abstract class BaseFragment extends Fragment implements PageStateManager.
             return null;
         }
         return (T) mRootView.findViewById(id);
+    }
+
+
+    public void showLoading() {
+        if (dialog == null) {
+            dialog = new ProgressDialog(getActivity());
+            dialog.setMessage("请稍后...");
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.show();
+        } else {
+            dialog.show();
+        }
+    }
+
+    public void cancelLoading() {
+        if (dialog != null) {
+            dialog.dismiss();
+            dialog = null;
+        }
     }
 
     public void openActivity(Class<?> targetActivityClass) {

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:drawablePadding="15dp"
-    android:drawableTop="@mipmap/ic_launcher"
+    android:drawableTop="@drawable/no_data_img"
     android:foreground="?attr/selectableItemBackgroundBorderless"
     android:text="@string/on_retry"
     android:textColor="@color/colorSubtitleText"

@@ -70,8 +70,35 @@
     <string name="dialog_tencent_tv">非中石油员工会员</string>
     <string name="dialog_tencent_tvv">没有权限进入此区域哦！</string>
     <string name="relevant_course">相关课程</string>
+    <string name="nodata">暂无数据</string>
+    <string name="update_user_img">修改头像</string>
+    <string name="user_name">姓名</string>
+    <string name="user_gender">性别</string>
+    <string name="user_phone">性别</string>
+    <string name="user_date">出生日期</string>
+    <string name="user_reservation">保存</string>
+    <string name="set_pwd">密码修改</string>
+    <string name="set_introduce">系统介绍</string>
+    <string name="my_set">系统设置</string>
+    <string name="my_used_pwd">旧密码</string>
+    <string name="my_new_pwd">新密码</string>
+    <string name="my_confirm_pwd">确认密码</string>
+    <string name="my_used_pwd_in">请输入旧密码</string>
+    <string name="my_new_pwd_in">请输入新密码</string>
+    <string name="my_confirm_pwd_in">请输入确认密码</string>
+    <string name="update_pwd">修改密码</string>
+    <string name="system_edition">系统版本</string>
+    <string name="system_introduce">系统介绍</string>
+    <string name="no_tv">暂无</string>
+    <string name="free">免费</string>
+    <string name="book">图书</string>
+    <string name="no_login">木有登录哦~</string>
+    <string name="my_collection_course">收藏的课程</string>
+    <string name="my_collection_wenda">收藏的问答</string>
+    <string name="my_collection_teacher">收藏的专家</string>
+    <string name="my_collection_jigou">收藏的机构</string>
 
 
-    <string name="no_data">没有找到数据 :-( ，点击刷新一下</string>
-    <string name="on_retry">数据坏了，点击试着修复一下 :-)</string>
+    <string name="no_data">~~空空如也~~\n试试刷新一下</string>
+    <string name="on_retry">~~数据坏了~~\n试试修复一下</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.jiaoyu.base;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -23,6 +24,7 @@ public abstract class BaseActivity extends AutoLayoutActivity implements PageSta
     private PageStateManager pageStateManager;
     //是否已经有数据
     private boolean isContentAlready;
+    private ProgressDialog dialog = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -127,6 +129,24 @@ public abstract class BaseActivity extends AutoLayoutActivity implements PageSta
         if (pageStateManager != null) {
             pageStateManager.showEmpty();
             pageStateManager.setOnRetryClickListener(this);
+        }
+    }
+
+    public void showLoading() {
+        if (dialog == null) {
+            dialog = new ProgressDialog(BaseActivity.this);
+            dialog.setMessage("请稍后...");
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.show();
+        } else {
+            dialog.show();
+        }
+    }
+
+    public void cancelLoading() {
+        if (dialog != null) {
+            dialog.dismiss();
+            dialog = null;
         }
     }
 

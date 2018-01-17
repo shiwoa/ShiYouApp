@@ -45,6 +45,14 @@ dependencies {
     //自动生成代码工具
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     compile 'com.jakewharton:butterknife:8.8.1'
+    //网络框架
+    compile 'com.zhy:okhttputils:2.6.2'
+    //gson
+    compile 'com.google.code.gson:gson:2.8.1'
+    //log
+    compile 'com.orhanobut:logger:2.1.1'
+    //圆形图片
+    compile 'de.hdodenhof:circleimageview:2.2.0'
     //检测内存泄漏
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'

@@ -12,9 +12,11 @@
         android:gravity="center"
         >
     <ImageView
+        android:id="@+id/img"
         android:layout_width="182px"
         android:layout_height="248px"
-        android:background="@mipmap/ic_launcher"
+        android:scaleType="fitXY"
+        android:background="@drawable/defined_image"
         />
         <TextView
             android:id="@+id/title"

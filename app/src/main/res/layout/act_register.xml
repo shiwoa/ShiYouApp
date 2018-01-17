@@ -83,11 +83,13 @@
                 android:background="@drawable/login_phone" />
 
             <EditText
-                android:layout_width="wrap_content"
+
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="35px"
                 android:background="@null"
                 android:hint="@string/register_hint_number"
+                android:id="@+id/phone"
                 android:textColor="@color/color_bb"
                 android:inputType="number"
                 android:textSize="29px" />
@@ -121,9 +123,11 @@
                 android:hint="@string/register_hint_yanzheng"
                 android:textColor="@color/color_bb"
                 android:inputType="number"
+                android:id="@+id/yanzheng_num"
                 android:textSize="29px" />
 
             <TextView
+                android:id="@+id/yanzheng_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="120px"
@@ -152,11 +156,13 @@
                 android:background="@drawable/login_pwd" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="35px"
                 android:background="@null"
                 android:hint="@string/register_hint_pwd"
+                android:id="@+id/pwd"
+                android:inputType="textPassword"
                 android:textColor="@color/color_bb"
                 android:textSize="29px" />
         </LinearLayout>
@@ -182,11 +188,13 @@
                 android:background="@drawable/login_pwd" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="35px"
                 android:background="@null"
                 android:hint="@string/register_pwd_confirm"
+                android:inputType="textPassword"
+                android:id="@+id/confirm_pwd"
                 android:textColor="@color/color_bb"
                 android:textSize="29px" />
         </LinearLayout>
@@ -206,17 +214,18 @@
             android:layout_marginTop="32px"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <CheckBox
+                android:id="@+id/check_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/register_yes"
-                />
+                android:button="@drawable/read_button_selector"
+                android:checked="true" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/register_read"
                 android:textColor="@color/color_66"
-                android:layout_marginLeft="6px"
+                android:layout_marginLeft="10px"
                 android:textSize="23px" />
             <TextView
                 android:layout_width="wrap_content"
@@ -229,6 +238,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/register_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

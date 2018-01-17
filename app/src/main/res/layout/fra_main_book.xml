@@ -149,6 +149,16 @@
                 android:layout_height="wrap_content"
                 android:numColumns="3"
                 android:scrollbars="none" />
+            <TextView
+                android:id="@+id/nodata_sy"
+                android:layout_width="match_parent"
+                android:layout_height="85px"
+                android:text="@string/nodata"
+                android:gravity="center"
+                android:textSize="26px"
+                android:textColor="@color/color_bb"
+                android:visibility="gone"
+                />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="5px"
@@ -188,6 +198,16 @@
                 android:layout_height="wrap_content"
                 android:numColumns="3"
                 android:scrollbars="none" />
+            <TextView
+                android:id="@+id/nodata_sq"
+                android:layout_width="match_parent"
+                android:layout_height="85px"
+                android:text="@string/nodata"
+                android:gravity="center"
+                android:textSize="26px"
+                android:textColor="@color/color_bb"
+                android:visibility="gone"
+                />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="5px"

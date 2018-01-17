@@ -3,10 +3,11 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
+    android:gravity="center"
     android:drawablePadding="15dp"
-    android:drawableTop="@mipmap/ic_launcher"
+    android:drawableTop="@drawable/no_data_img"
     android:foreground="?attr/selectableItemBackgroundBorderless"
     android:text="@string/no_data"
-    android:textColor="@color/colorSubtitleText"
+    android:textColor="@color/color_b3"
     android:textSize="@dimen/text_content_size" />
 

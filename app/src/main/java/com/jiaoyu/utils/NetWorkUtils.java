@@ -29,7 +29,7 @@ public class NetWorkUtils {
         if (connectivityManager == null) {
             return false;
         } else {
-            @SuppressLint("MissingPermission") NetworkInfo info = connectivityManager.getActiveNetworkInfo();
+            NetworkInfo info = connectivityManager.getActiveNetworkInfo();
             if (info == null) {
                 return false;
             } else {
@@ -69,6 +69,25 @@ public class NetWorkUtils {
             return wifiMac.replace(":", "");
         }
         return null;
+    }
+
+    private static ConnectivityManager connectivityManager; // 判断网络的对象
+
+    // 实例话判断网络的类
+    public static void initConnectivityManager(Context context){
+        if(connectivityManager == null){
+            connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        }
+    }
+    // 判断网络是否可用
+    public static boolean isNetworkAvailable(Context context) {
+        initConnectivityManager(context);
+        //得到网络的信息
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
+            return true;
+        }
+        return false;
     }
 
 }

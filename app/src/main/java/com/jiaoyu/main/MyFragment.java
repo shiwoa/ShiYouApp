@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
@@ -13,15 +14,16 @@ import android.widget.TextView;
 
 import com.jiaoyu.adapter.ViewPagerAdapter;
 import com.jiaoyu.base.BaseFragment;
-import com.jiaoyu.fragment.BookLiveNowFragment;
 import com.jiaoyu.fragment.MyArticleFragment;
 import com.jiaoyu.fragment.MyBookFragment;
 import com.jiaoyu.fragment.MyCollectionFragment;
 import com.jiaoyu.fragment.MyCommunityFragment;
-import com.jiaoyu.fragment.MyPurchaseFragment;
+import com.jiaoyu.fragment.MyPurchasedFragment;
 import com.jiaoyu.login.LoginActivity;
-import com.jiaoyu.shiyou.BookLiveListActivity;
+import com.jiaoyu.shiyou.MyInformationActivity;
+import com.jiaoyu.shiyou.MySettingActivity;
 import com.jiaoyu.shiyou.R;
+import com.jiaoyu.utils.SharedPreferencesUtils;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
@@ -50,11 +52,13 @@ public class MyFragment extends BaseFragment{
     private TextView title;
     private MagicIndicator magicIndicator; //滑动控件
     private MyBookFragment myBook; //我的书架
-    private MyPurchaseFragment myPurchase; //已购买
+    private MyPurchasedFragment myPurchase; //已购买
     private MyCollectionFragment myCollection; //收藏
     private MyArticleFragment myArticle; //文章
     private MyCommunityFragment myCommunity; //社区
     private ImageView userIcon; //用户头像
+    private int userId; //用户id
+    private LinearLayout setting; //设置
     
     /**
      * 初始化布局资源文件
@@ -82,10 +86,12 @@ public class MyFragment extends BaseFragment{
      */
     @Override
     protected void initComponent(Bundle savedInstanceState) {
+        userId = (int) SharedPreferencesUtils.getParam(getActivity(), "userId", -1);
         magicIndicator = (MagicIndicator) findViewById(R.id.my_magic_indicator);
         title = (TextView) findViewById(R.id.my_title);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         userIcon = findViewById(R.id.my_user_logo);
+        setting = findViewById(R.id.my_setting);
     }
 
     /**
@@ -93,7 +99,30 @@ public class MyFragment extends BaseFragment{
      */
     @Override
     protected void initListener() {
-        userIcon.setOnClickListener(view -> openActivity(LoginActivity.class));
+        //设置
+        setting.setOnClickListener(view -> openActivity(MySettingActivity.class));
+        userIcon.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        userId = (int) SharedPreferencesUtils.getParam(getActivity(), "userId", -1);
+    }
+
+    @Override
+    public void onClick(View view) {
+        super.onClick(view);
+        if (userId == -1){
+            openActivity(LoginActivity.class);
+            return;
+        }
+        switch (view.getId()){
+            case R.id.my_user_logo: //用户头像
+                openActivity(MyInformationActivity.class);
+                break;
+        }
     }
 
     /**
@@ -102,7 +131,7 @@ public class MyFragment extends BaseFragment{
     @Override
     protected void initData() {
         myBook = new MyBookFragment();
-        myPurchase= new MyPurchaseFragment();
+        myPurchase= new MyPurchasedFragment();
         myCollection = new MyCollectionFragment();
         myArticle = new MyArticleFragment();
         myCommunity = new MyCommunityFragment();

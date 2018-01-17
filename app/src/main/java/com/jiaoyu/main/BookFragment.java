@@ -2,7 +2,9 @@ package com.jiaoyu.main;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -13,17 +15,28 @@ import com.example.sliderlibrary.SliderLayout;
 import com.example.sliderlibrary.SliderTypes.BaseSliderView;
 import com.example.sliderlibrary.SliderTypes.TextSliderView;
 import com.jiaoyu.adapter.BookAdapter;
+import com.jiaoyu.adapter.BookClassAdapter;
 import com.jiaoyu.base.BaseFragment;
+import com.jiaoyu.entity.EntityPublic;
+import com.jiaoyu.entity.PublicEntity;
+import com.jiaoyu.entity.PublicEntityCallback;
 import com.jiaoyu.shiyou.BookClassificationActivity;
 import com.jiaoyu.shiyou.BookDetailsActivity;
 import com.jiaoyu.shiyou.BookLiveListActivity;
 import com.jiaoyu.shiyou.BookSearchActivity;
 import com.jiaoyu.shiyou.R;
+import com.jiaoyu.utils.Address;
+import com.jiaoyu.utils.SharedPreferencesUtils;
 import com.jiaoyu.utils.ToastUtil;
 import com.jiaoyu.widget.NoScrollGridView;
+import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import okhttp3.Call;
 
 /**
  * Created by bishuang on 2018/1/5.
@@ -34,14 +47,15 @@ public class BookFragment extends BaseFragment{
 
     private static BookFragment bookFragment;
     private NoScrollGridView shiyouGrid,shekeGrid; //石油列表 社科列表
-    private List<String> datalist = new ArrayList<>();
-    private List<String> datashekelist = new ArrayList<>();
+    private List<EntityPublic> datalist = new ArrayList<>();
+    private List<EntityPublic> datashekelist = new ArrayList<>();
     private List<String> bannerList = new ArrayList<>(); //bannerList
     private BookAdapter shiyouAdapter,shekeAdapter;
     private SliderLayout homeBannerLayout; //banner图
     private LinearLayout liveList,classList,tencentList; //直播课程 本社图书 腾讯阅读
     private Dialog dialog;
-    private TextView search_tv; //搜索
+    private TextView search_tv,nodata_sy,nodata_sq; //搜索 无数据石油 无数据社区
+    private int userId; //用户名
 
     /**
      * 初始化布局资源文件
@@ -68,6 +82,7 @@ public class BookFragment extends BaseFragment{
      */
     @Override
     protected void initComponent(Bundle savedInstanceState) {
+        userId = (int) SharedPreferencesUtils.getParam(getActivity(), "userId", -1);
         shiyouGrid = findViewById(R.id.shiyou_grid);
         shekeGrid = findViewById(R.id.sheke_grid);
         homeBannerLayout = findViewById(R.id.home_banner_layout);
@@ -75,6 +90,8 @@ public class BookFragment extends BaseFragment{
         classList = findViewById(R.id.book_class_list);
         tencentList = findViewById(R.id.book_tencent_list);
         search_tv = findViewById(R.id.search_tv);
+        nodata_sy = findViewById(R.id.nodata_sy);
+        nodata_sq = findViewById(R.id.nodata_sq);
     }
 
     /**
@@ -91,7 +108,12 @@ public class BookFragment extends BaseFragment{
         //直播课程
         liveList.setOnClickListener(view->openActivity(BookLiveListActivity.class));
         //石油列表
-        shiyouGrid.setOnItemClickListener((adapterView, view, i, l) -> openActivity(BookDetailsActivity.class));
+        shiyouGrid.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent();
+            intent.setClass(getActivity(),BookDetailsActivity.class);
+            intent.putExtra("ebookId",datalist.get(i).getId());
+            startActivity(intent);
+        });
     }
 
     /**
@@ -109,16 +131,19 @@ public class BookFragment extends BaseFragment{
         bannerList.add("http://static.268xue.com/upload/eduplat/bannerImages/20150721/1437468735497415340.jpg");
         bannerList.add("http://static.268xue.com/upload/eduplat/bannerImages/20150721/1437468754570856573.jpg");
 
-        for (int i = 0; i < 6; i++){
-            datalist.add("石油测试标题"+i);
-        }
-        shiyouAdapter = new BookAdapter(getActivity(),datalist);
-        shiyouGrid.setAdapter(shiyouAdapter);
-        for (int i = 0; i < 2; i++){
-            datashekelist.add("社科测试标题"+i);
-        }
-        shekeAdapter = new BookAdapter(getActivity(),datashekelist);
-        shekeGrid.setAdapter(shekeAdapter);
+//        for (int i = 0; i < 6; i++){
+//            datalist.add("石油测试标题"+i);
+//        }
+//        shiyouAdapter = new BookAdapter(getActivity(),datalist);
+//        shiyouGrid.setAdapter(shiyouAdapter);
+
+        //获取石油专区列表的方法
+        getSYList(userId);
+//        for (int i = 0; i < 2; i++){
+//            datashekelist.add("社科测试标题"+i);
+//        }
+//        shekeAdapter = new BookAdapter(getActivity(),datashekelist);
+//        shekeGrid.setAdapter(shekeAdapter);
         initBannerLayout();
     }
 
@@ -129,6 +154,7 @@ public class BookFragment extends BaseFragment{
     protected void onDataReload() {
 
     }
+
 
     /**
      * 初始化轮播图
@@ -154,6 +180,61 @@ public class BookFragment extends BaseFragment{
         homeBannerLayout.setPresetTransformer(SliderLayout.Transformer.ZoomOutSlide);
         homeBannerLayout.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         homeBannerLayout.setDuration(3000);
+    }
+
+    /**
+    * @date 2018/1/14 15:19
+    * @Description: 获取石油专区列表的方法
+    */
+    public void getSYList(int userId) {
+        Map<String, String> map = new HashMap<>();
+        map.put("userId", String.valueOf(userId));
+        showLoading();
+        OkHttpUtils.get().params(map).url(Address.BOOKSYLIST).build().execute(new PublicEntityCallback() {
+            @Override
+            public void onError(Call call, Exception e, int id) {
+                cancelLoading();
+            }
+
+            @Override
+            public void onResponse(PublicEntity response, int id) {
+                cancelLoading();
+                if (!TextUtils.isEmpty(response.toString())) {
+                    try {
+                        String message = response.getMessage();
+                        EntityPublic entity = response.getEntity();
+                        if (response.isSuccess()) {
+                            List<EntityPublic> shiyouList = entity.getShiyouList();
+                            if (shiyouList!= null){
+                                datalist.addAll(shiyouList);
+                                shiyouAdapter = new BookAdapter(getActivity(),datalist);
+                                shiyouGrid.setAdapter(shiyouAdapter);
+                            }else{
+                                shiyouGrid.setVisibility(View.GONE);
+                                nodata_sy.setVisibility(View.VISIBLE);
+                            }
+                            List<EntityPublic> shekeList = entity.getShekeList();
+                            if (shekeList != null){
+                                datashekelist.addAll(shekeList);
+                                shekeAdapter = new BookAdapter(getActivity(),datashekelist);
+                                shekeGrid.setAdapter(shekeAdapter);
+                            }else{
+                                shekeGrid.setVisibility(View.GONE);
+                                nodata_sq.setVisibility(View.VISIBLE);
+                            }
+
+                        } else {
+                            shiyouGrid.setVisibility(View.GONE);
+                            nodata_sy.setVisibility(View.VISIBLE);
+                            shekeGrid.setVisibility(View.GONE);
+                            nodata_sq.setVisibility(View.VISIBLE);
+                            ToastUtil.showWarning(getActivity(),message);
+                        }
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        });
     }
 
     // 确认时显示的diaLog

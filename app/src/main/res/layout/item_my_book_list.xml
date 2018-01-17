@@ -12,9 +12,11 @@
         android:gravity="center"
         >
     <ImageView
+        android:id="@+id/book_img"
         android:layout_width="185px"
         android:layout_height="250px"
-        android:background="@mipmap/ic_launcher"
+        android:background="@drawable/defined_image"
+        android:scaleType="fitXY"
         />
         <TextView
             android:id="@+id/title"
