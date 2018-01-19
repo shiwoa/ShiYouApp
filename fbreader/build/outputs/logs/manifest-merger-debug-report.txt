@@ -1,0 +1,93 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:2:1-41:12
+INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:2:1-41:12
+INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:2:1-41:12
+INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:2:1-41:12
+INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:2:1-41:12
+INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:2:1-41:12
+INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:2:1-41:12
+	package
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:3:5-51
+		INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml
+		INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:6:5-32
+		INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml
+		INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:5:5-33
+		INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml
+		INJECTED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml
+	android:installLocation
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:4:5-35
+uses-sdk
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:8:5-10:38
+	android:maxSdkVersion
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:9:9-35
+	android:minSdkVersion
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:10:9-35
+supports-screens
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:12:5-16:39
+	android:largeScreens
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:14:9-36
+	android:smallScreens
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:16:9-36
+	android:normalScreens
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:15:9-37
+	android:anyDensity
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:13:9-34
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:18:5-68
+	android:name
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:18:22-65
+uses-permission#android.permission.DISABLE_KEYGUARD
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:19:5-75
+	android:name
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:19:22-72
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:20:5-81
+	android:name
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:20:22-78
+application
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:22:5-40:19
+	android:name
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:22:18-86
+activity#com.mouee.fbreader.activity.TextSearchActivity
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:23:9-83
+	android:name
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:23:19-80
+activity#org.geometerplus.android.fbreader.FBReader
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:24:9-27:52
+	android:screenOrientation
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:27:13-49
+	android:launchMode
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:26:13-44
+	android:name
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:25:13-70
+activity#org.geometerplus.android.fbreader.TOCActivity
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:28:9-31:52
+	android:screenOrientation
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:31:13-49
+	android:configChanges
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:30:13-63
+	android:name
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:29:13-73
+activity#org.geometerplus.android.fbreader.BookmarksMoueeAcvtivity
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:32:9-35:52
+	android:screenOrientation
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:35:13-49
+	android:configChanges
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:34:13-63
+	android:name
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:33:13-85
+activity#org.geometerplus.android.fbreader.share.ShareMenuActivity
+ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:36:9-39:86
+	android:screenOrientation
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:38:13-49
+	android:theme
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:39:13-83
+	android:name
+		ADDED from E:\newProject\AllProject\ShiYouApp\fbreader\AndroidManifest.xml:37:13-85

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="toc_bg">#e7e7e7</color>
+    <color name="red">#9c1e23</color>
+    <color name="yellow">#ffff00</color>
+    <color name="original_color">#7e7e7e</color>
+    <color name="original_selected_color">#d25314</color>
+    <color name="bookmark_text_color">#000</color>
+</resources>

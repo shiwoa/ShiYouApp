@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_menu_top">
+
+
+    <ImageButton
+        android:id="@+id/btnBookshelf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:onClick="goToBookshelf"
+        android:scaleType="fitXY"
+        android:src="@drawable/bookshelf" />
+
+    <ImageView
+        android:id="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/btnBookshelf"
+        android:src="@drawable/divider_v"
+        android:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/menu_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/divider"
+        android:background="@android:color/transparent"
+        android:onClick="showTOC"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_contents" />
+
+    <Button
+        android:id="@+id/btn_purchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dip"
+        android:layout_toRightOf="@+id/menu_btn"
+        android:background="@drawable/btn_purchase"
+        android:text="购买"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/btn_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/btn_share"
+        android:background="@android:color/transparent"
+        android:onClick="openOptionsMenu"
+        android:scaleType="fitXY"
+        android:src="@drawable/text_selector" />
+
+    <ImageButton
+        android:id="@id/btn_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/btn_bookmark"
+        android:background="@android:color/transparent"
+        android:onClick="search"
+        android:scaleType="fitXY"
+        android:src="@drawable/text_search" />
+
+    <ImageButton
+        android:id="@id/btn_bookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:onClick="toggleBookmark"
+        android:scaleType="fitXY"
+        android:src="@drawable/bookmark_normal" />
+
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="empty_string"></string>
+    <string name="zwtd">think书城</string>
+    <string name="share">分享</string>
+    <string name="share_content">我正在用think书城书城阅读图书，享受免费的正版书籍</string>
+    <string name="search_content_hint">全文搜索</string>
+    <!-- 目录 -->
+    <string name="contents">目录</string>
+    <!-- 书签 -->
+    <string name="have_no_bookmark">您还没有添加书签。</string>
+    <string name="bookmarks">书签</string>
+    <!-- 笔记 -->
+    <string name="have_no_booknote">您还没有添加书签。</string>
+    <string name="booknotes">笔记</string>
+    <!-- 搜索 -->
+    <string name="text_search_empty_tip">没有结果</string>
+    <!-- 购买 -->
+    <string name="remote_call_failed">访问远程服务失败</string>
+    <string name="check_sign_failed">您的订单信息已被非法篡改。</string>
+    <string name="purchase_success">购买成功，您可以继续阅读了！</string>
+    <string name="purchase">购买</string>
+    <string name="exceed_probation_limit">您只能试读至%1$d页,需要购买此图书吗？</string>
+    <string name="cancel">取消</string>
+    <string name="tips">提示</string>
+
+    <string name="app_name">think reader</string>
+    <string name="text_search_tip">输入关键词，看看TA都藏在哪？</string>
+    <string name="progress">进度</string>
+    <string name="options">选项</string>
+    <string name="night">夜间</string>
+
+    <string name="unlicensed">Unlicensed\n新媒科创</string>
+</resources>

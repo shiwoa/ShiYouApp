@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.geometerplus.zlibrary.ui.android"
+    android:installLocation="auto"
+    android:versionCode="105051"
+    android:versionName="1.5.5" >
+
+    <uses-sdk
+        android:maxSdkVersion="26"
+        android:minSdkVersion="16" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application android:name="org.geometerplus.android.fbreader.FBReaderApplication" >
+        <activity android:name="com.mouee.fbreader.activity.TextSearchActivity" />
+        <activity
+            android:name="org.geometerplus.android.fbreader.FBReader"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.geometerplus.android.fbreader.TOCActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.geometerplus.android.fbreader.BookmarksMoueeAcvtivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.geometerplus.android.fbreader.share.ShareMenuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    </application>
+
+</manifest>
