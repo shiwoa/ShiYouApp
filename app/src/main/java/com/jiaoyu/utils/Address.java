@@ -27,7 +27,11 @@ public class Address {
     public static String ADDBOOKLIST = HOST + "ebook/addToEbookShelf";
     //我的书架
     public static String MYBOOKLIST = HOST + "ebook/getMyEbookShelf";
+    //书城-专区-更多
+    public static String BOOKPAGE = HOST + "ebook/getEbookPage";
     //课程列表
     public static String COURSE_LIST = HOST + "course/list";
+    //课程详情
+    public static String COURSE_INFO = HOST + "course/info";
 
 }

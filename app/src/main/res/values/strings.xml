@@ -97,6 +97,11 @@
     <string name="my_collection_wenda">收藏的问答</string>
     <string name="my_collection_teacher">收藏的专家</string>
     <string name="my_collection_jigou">收藏的机构</string>
+    <string name="my_booklist">我的书架</string>
+    <string name="my_yigou">已购专区</string>
+    <string name="my_shoucang">关注收藏</string>
+    <string name="my_wenzhang">文章笔记</string>
+    <string name="my_shequ">社区互动</string>
 
 
     <string name="no_data">~~空空如也~~\n试试刷新一下</string>

@@ -75,7 +75,7 @@ public class MyBookFragment extends BaseFragment{
         book_scr = findViewById(R.id.book_scr);
         no_data.setVisibility(View.VISIBLE);
         no_data_tv = findViewById(R.id.no_data_tv);
-        showStateLoading(book_scr);
+//        showStateLoading(book_scr);
     }
 
     /**
@@ -85,6 +85,8 @@ public class MyBookFragment extends BaseFragment{
     protected void initListener() {
 
     }
+
+
 
     /**
      * 初始化数据
@@ -113,43 +115,49 @@ public class MyBookFragment extends BaseFragment{
         OkHttpUtils.get().params(map).url(Address.MYBOOKLIST).build().execute(new PublicEntityCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                showStateError();
+                no_data_tv.setText(R.string.on_retry);
+                book_scr.setVisibility(View.GONE);
+                no_data.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onResponse(PublicEntity response, int id) {
-                showStateContent();
+//                showStateContent();
                 if (!TextUtils.isEmpty(response.toString())) {
-                    try {
+//                    try {
                         String message = response.getMessage();
                         if (response.isSuccess()){
                             if (response.getEntity().getDataList() != null){
                                 if (datalist != null){
                                     datalist.clear();
                                 }
-                                List<EntityPublic> list = response.getEntity().getDataList();
-                                if (list.size() != 0){
-                                    book_scr.setVisibility(View.VISIBLE);
-                                    no_data.setVisibility(View.GONE);
-                                    datalist.addAll(list);
-                                    adapter = new MyBookListAdapter(getActivity(),datalist);
-                                    dataGrid.setAdapter(adapter);
-                                }else{
-                                    showStateEmpty();
-                                }
+                                    List<EntityPublic> list = response.getEntity().getDataList();
+                                    if (list.size() != 0){
+                                        book_scr.setVisibility(View.VISIBLE);
+                                        no_data.setVisibility(View.GONE);
+                                        datalist.addAll(list);
+                                        adapter = new MyBookListAdapter(getActivity(),datalist);
+                                        dataGrid.setAdapter(adapter);
+                                    }else{
+                                        no_data_tv.setText(R.string.no_data);
+                                        book_scr.setVisibility(View.GONE);
+                                        no_data.setVisibility(View.VISIBLE);
+                                    }
                             }else{
+                                book_scr.setVisibility(View.GONE);
+                                no_data.setVisibility(View.VISIBLE);
                                 if (userId == -1){
                                     no_data_tv.setText(R.string.no_login);
                                 }else {
-                                    showStateEmpty();
+                                    no_data_tv.setText(R.string.no_data);
                                 }
                             }
 
                         }else{
                             ToastUtil.showWarning(getActivity(),message);
                         }
-                    } catch (Exception e) {
-                    }
+//                    } catch (Exception e) {
+//                    }
                 }
             }
         });

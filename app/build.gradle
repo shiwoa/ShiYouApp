@@ -3,6 +3,7 @@ apply plugin: 'me.tatarka.retrolambda' //Lambda表达式
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
+
     defaultConfig {
         applicationId rootProject.applicationId
         minSdkVersion rootProject.minSdkVersion
@@ -22,6 +23,23 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+
+//    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+//    sourceSets.main {
+//        jniLibs.srcDir 'src/main/libs'
+//        jni.srcDirs = [] //disable automatic ndk-build call
+//    }
+    packagingOptions {
+        pickFirst 'lib/armeabi/libLineBreak-v2.so'
+        pickFirst 'lib/armeabi/libDeflatingDecompressor-v3.so'
+        pickFirst 'lib/armeabi/libNativeFormats-v2.so'
+
+    }
+//    externalNativeBuild {
+//        ndkBuild {
+//            path "src/main/jni/Android.mk"
+//        }
+//    }
 }
 
 dependencies {
@@ -60,14 +78,16 @@ dependencies {
     implementation project(':sliderLibrary')
     //fragment滑动
     implementation project(':magicindicator')
+    implementation project(':fbreader')
 }
+
 
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
         def requested = details.requested
         if (requested.group == 'com.android.support') {
             if (!requested.name.startsWith("multidex")) {
-                details.useVersion '25.3.0'
+                details.useVersion '27.0.0'
             }
         }
     }

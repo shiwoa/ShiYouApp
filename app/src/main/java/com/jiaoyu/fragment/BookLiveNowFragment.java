@@ -40,8 +40,8 @@ public class BookLiveNowFragment extends BaseFragment{
     @Override
     protected void initComponent(Bundle savedInstanceState) {
         liveNowRec = findViewById(R.id.live_now_rec);
-
     }
+
 
     /**
      * 添加监听

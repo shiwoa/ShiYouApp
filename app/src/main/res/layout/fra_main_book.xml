@@ -166,6 +166,7 @@
                 android:background="@drawable/book_gray_xuxian"
                 />
             <LinearLayout
+                android:id="@+id/all_shiyou"
                 android:layout_width="match_parent"
                 android:layout_height="85px"
                 android:gravity="center"
@@ -215,6 +216,7 @@
                 android:background="@drawable/book_gray_xuxian"
                 />
             <LinearLayout
+                android:id="@+id/all_shequ"
                 android:layout_width="match_parent"
                 android:layout_height="85px"
                 android:gravity="center"

@@ -28,9 +28,9 @@ public class GlideUtil {
         Glide.with(DemoApplication.getAppContext())
                 .load(url)
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)
-                .placeholder(R.mipmap.ic_launcher) //设置占位图，在加载之前显示
-                .error(R.mipmap.ic_launcher) //在图像加载失败时显示
-                .fallback(R.mipmap.ic_launcher)
+                .placeholder(R.drawable.defined_image) //设置占位图，在加载之前显示
+                .error(R.drawable.defined_image) //在图像加载失败时显示
+                .fallback(R.drawable.defined_image)
                 .crossFade()
                 .into(imageView);
     }

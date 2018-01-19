@@ -2,6 +2,7 @@ package com.jiaoyu.adapter;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,8 +36,19 @@ public class BookCourseAdapter extends BaseQuickAdapter<EntityCourse,BaseViewHol
         helper.setText(R.id.price,"￥"+item.getCurrentprice());
         helper.setText(R.id.zhang_num,item.getLessionnum()+"节课");
         helper.setText(R.id.num,item.getPageBuycount()+"人已购买");
-        helper.setText(R.id.teacher,"专家："+item.getOwnerName());
-        helper.setText(R.id.teacher_tab,item.getColTagNames());
+        if (!TextUtils.isEmpty(item.getOwnerName())){
+            helper.setText(R.id.teacher,"专家："+item.getOwnerName());
+        }else{
+            helper.setText(R.id.teacher,R.string.nodata);
+
+        }
+        if (!TextUtils.isEmpty(item.getColTagNames())){
+            helper.setText(R.id.teacher_tab,item.getColTagNames());
+        }else{
+            helper.setText(R.id.teacher_tab,R.string.nodata);
+
+        }
+
         ImageView courseImg = helper.getView(R.id.courseImg);
         GlideUtil.loadImage(context, Address.IMAGE_NET+item.getMobileLogo(),courseImg);
 

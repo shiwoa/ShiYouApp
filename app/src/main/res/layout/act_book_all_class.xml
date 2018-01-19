@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_public_head" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/class_rel"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:layout_gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/no_data"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:gravity="center"
+        android:text="@string/nodata"
+        android:textColor="@color/color_bb"
+        android:textSize="26px"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:background="@color/color_f7f7" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+        <com.jiaoyu.widget.NoScrollGridView
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="3"
+            android:scrollbars="none" />
+        <TextView
+            android:id="@+id/nodata_sy"
+            android:layout_width="match_parent"
+            android:layout_height="85px"
+            android:text="@string/nodata"
+            android:gravity="center"
+            android:textSize="26px"
+            android:textColor="@color/color_bb"
+            android:visibility="gone"
+            />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

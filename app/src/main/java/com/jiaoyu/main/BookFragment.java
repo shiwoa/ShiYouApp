@@ -20,6 +20,7 @@ import com.jiaoyu.base.BaseFragment;
 import com.jiaoyu.entity.EntityPublic;
 import com.jiaoyu.entity.PublicEntity;
 import com.jiaoyu.entity.PublicEntityCallback;
+import com.jiaoyu.shiyou.BookAllClassActivity;
 import com.jiaoyu.shiyou.BookClassificationActivity;
 import com.jiaoyu.shiyou.BookDetailsActivity;
 import com.jiaoyu.shiyou.BookLiveListActivity;
@@ -56,6 +57,7 @@ public class BookFragment extends BaseFragment{
     private Dialog dialog;
     private TextView search_tv,nodata_sy,nodata_sq; //搜索 无数据石油 无数据社区
     private int userId; //用户名
+    private LinearLayout all_shequ,all_shiyou; //全部社区 全部石油
 
     /**
      * 初始化布局资源文件
@@ -92,6 +94,8 @@ public class BookFragment extends BaseFragment{
         search_tv = findViewById(R.id.search_tv);
         nodata_sy = findViewById(R.id.nodata_sy);
         nodata_sq = findViewById(R.id.nodata_sq);
+        all_shequ = findViewById(R.id.all_shequ);
+        all_shiyou = findViewById(R.id.all_shiyou);
     }
 
     /**
@@ -99,6 +103,19 @@ public class BookFragment extends BaseFragment{
      */
     @Override
     protected void initListener() {
+        Intent intent = new Intent();
+        //石油查看全部
+        all_shiyou.setOnClickListener(view -> {
+            intent.setClass(getActivity(), BookAllClassActivity.class);
+            intent.putExtra("type","shiyou");
+            startActivity(intent);
+        });
+        //石油查看全部
+        all_shequ.setOnClickListener(view -> {
+            intent.setClass(getActivity(), BookAllClassActivity.class);
+            intent.putExtra("type","shequ");
+            startActivity(intent);
+        });
         //搜索
         search_tv.setOnClickListener(view -> openActivity(BookSearchActivity.class));
         //知道啦
@@ -109,7 +126,6 @@ public class BookFragment extends BaseFragment{
         liveList.setOnClickListener(view->openActivity(BookLiveListActivity.class));
         //石油列表
         shiyouGrid.setOnItemClickListener((adapterView, view, i, l) -> {
-            Intent intent = new Intent();
             intent.setClass(getActivity(),BookDetailsActivity.class);
             intent.putExtra("ebookId",datalist.get(i).getId());
             startActivity(intent);

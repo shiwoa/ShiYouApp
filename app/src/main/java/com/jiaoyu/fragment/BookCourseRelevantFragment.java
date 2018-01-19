@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import com.jiaoyu.adapter.BookCourseDetailsAdapter;
 import com.jiaoyu.adapter.BookLiveNowAdapter;
 import com.jiaoyu.base.BaseFragment;
+import com.jiaoyu.entity.EntityPublic;
 import com.jiaoyu.shiyou.BookCourseDetailsActivity;
 import com.jiaoyu.shiyou.BookCoursePlayActivity;
 import com.jiaoyu.shiyou.R;
@@ -23,7 +24,7 @@ import java.util.List;
 public class BookCourseRelevantFragment extends BaseFragment{
 
     private RecyclerView relevantRec;
-    private List<String> listLive = new ArrayList<>();
+    private List<EntityPublic> listLive = new ArrayList<>();
     private BookCourseDetailsAdapter adapter;
 
     /**
@@ -59,9 +60,9 @@ public class BookCourseRelevantFragment extends BaseFragment{
         if (listLive != null){
             listLive.clear();
         }
-        for (int i = 0;i<6; i++){
-            listLive.add("推荐课程测试标题"+i);
-        }
+//        for (int i = 0;i<6; i++){
+//            listLive.add("推荐课程测试标题"+i);
+//        }
         relevantRec.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new BookCourseDetailsAdapter(R.layout.item_course_details_content,getActivity(),listLive);
         relevantRec.setAdapter(adapter);

@@ -10,6 +10,7 @@
         android:layout_marginLeft="30px"
         android:layout_marginRight="30px"
         android:layout_marginTop="40px"
+        android:layout_marginBottom="35px"
         android:orientation="horizontal"
         >
 
@@ -23,6 +24,7 @@
             android:textSize="26px" />
 
         <TextView
+            android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/loading"
@@ -30,15 +32,6 @@
             android:textSize="24px" />
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="35px"
-        android:layout_marginLeft="30px"
-        android:layout_marginTop="20px"
-        android:text="@string/loading"
-        android:textColor="@color/color_66"
-        android:textSize="22px" />
 
     <View
         android:layout_width="match_parent"

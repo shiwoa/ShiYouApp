@@ -36,11 +36,11 @@ import okhttp3.Call;
  * 我的已购买fragment
  */
 
-public class MyPurchasedFragment extends BaseFragment{
+public class MyPurchasedFragment extends BaseFragment implements ViewPager.OnPageChangeListener{
 
     private List<Fragment> fragments;
     private ViewPagerAdapter viewPagerAdapter;
-    private NoScrollViewPager viewPager;
+    private ViewPager viewPager;
     private MyPurchasedBookFragment bookFragment; // 图书
     private MyPurchasedCourseFragment courseFragment; // 课程
     private TextView bookBtn,courseBtn; // 图书 课程
@@ -62,7 +62,7 @@ public class MyPurchasedFragment extends BaseFragment{
     @Override
     protected void initComponent(Bundle savedInstanceState) {
         viewPager = findViewById(R.id.view_pager);
-        viewPager.setScanScroll(false);
+//        viewPager.setScanScroll(false);
         bookBtn = findViewById(R.id.book);
         courseBtn = findViewById(R.id.course);
     }
@@ -72,6 +72,7 @@ public class MyPurchasedFragment extends BaseFragment{
      */
     @Override
     protected void initListener() {
+        viewPager.setOnPageChangeListener(this);
        bookBtn.setOnClickListener(this);
        courseBtn.setOnClickListener(this);
     }
@@ -82,12 +83,9 @@ public class MyPurchasedFragment extends BaseFragment{
     @Override
     protected void initData() {
         fragments = new ArrayList<>(); // 存放fragment的集合
-        if (viewPagerAdapter == null){
-            viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(), fragments);
-            viewPager.setAdapter(viewPagerAdapter);
-            initFragments();
-            viewPagerAdapter.notifyDataSetChanged();
-        }
+        initFragments();
+        viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(), fragments);
+        viewPager.setAdapter(viewPagerAdapter);
     }
 
     /**
@@ -130,5 +128,30 @@ public class MyPurchasedFragment extends BaseFragment{
         bookBtn.setBackgroundColor(getResources().getColor(R.color.White));
         courseBtn.setTextColor(getResources().getColor(R.color.color_99));
         courseBtn.setBackgroundColor(getResources().getColor(R.color.White));
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        if (position ==0){
+            setTextViewBackGround();
+            viewPager.setCurrentItem(0);
+            bookBtn.setTextColor(getResources().getColor(R.color.color_320));
+            bookBtn.setBackgroundResource(R.drawable.line_main);
+        }else if (position == 1){
+            setTextViewBackGround();
+            viewPager.setCurrentItem(1);
+            courseBtn.setTextColor(getResources().getColor(R.color.color_320));
+            courseBtn.setBackgroundResource(R.drawable.line_main);
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
     }
 }

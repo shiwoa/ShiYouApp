@@ -271,6 +271,15 @@ public class EntityPublic implements Serializable {
     private String ebookName;
     private String ebookImg;
     private String ebookInfo;
+    private String timeStr;
+
+    public String getTimeStr() {
+        return timeStr;
+    }
+
+    public void setTimeStr(String timeStr) {
+        this.timeStr = timeStr;
+    }
 
     public String getEbookInfo() {
         return ebookInfo;

@@ -121,7 +121,10 @@ public class BookCourseSearchActivity extends BaseActivity{
                                 adapter = new BookCourseAdapter(R.layout.item_book_course,BookCourseSearchActivity.this,dataList);
                                 searchRec.setAdapter(adapter);
                                 adapter.setOnItemClickListener((adapter1, view, position) ->{
-                                    openActivity(BookCourseDetailsActivity.class);
+                                    Intent intent = new Intent();
+                                    intent.setClass(BookCourseSearchActivity.this,BookCourseDetailsActivity.class);
+                                    intent.putExtra("courseId",dataList.get(position).getId());
+                                    startActivity(intent);
                                 });
 
                             }else{

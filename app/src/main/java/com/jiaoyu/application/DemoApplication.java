@@ -18,6 +18,8 @@ import com.zhy.autolayout.config.AutoLayoutConifg;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.log.LoggerInterceptor;
 
+import org.geometerplus.android.fbreader.FBReaderApplication;
+
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
@@ -29,7 +31,7 @@ import okhttp3.OkHttpClient;
  * application类
  */
 
-public class DemoApplication extends Application {
+public class DemoApplication extends FBReaderApplication {
 
     private static DemoApplication instance = null;
     private static DemoApplication demoApplication;

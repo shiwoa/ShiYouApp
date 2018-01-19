@@ -104,7 +104,7 @@ public class BookClassificationActivity extends BaseActivity{
                                 if (response.isSuccess()) {
 
                                     List<EntityPublic> subjectList = response.getEntity().getSubjectList();
-                                        datalist.addAll(subjectList);
+                                      datalist.addAll(subjectList);
                                       adapter = new BookClassAdapter(BookClassificationActivity.this,datalist);
                                       classGrud.setAdapter(adapter);
                                 } else {
