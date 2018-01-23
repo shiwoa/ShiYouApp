@@ -7,6 +7,12 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- reade -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 写文件 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.jiaoyu.application.DemoApplication"
         android:allowBackup="true"
@@ -35,6 +41,9 @@
             android:value="1280" />
         <!-- 书城-课程直播-直播列表 -->
         <activity android:name=".BookLiveListActivity"
+            android:screenOrientation="portrait"/>
+        <!-- 测试阅读器 -->
+        <activity android:name="com.jiaoyu.read.Main2Activity"
             android:screenOrientation="portrait"/>
         <!-- 书城-图书详情 -->
         <activity android:name=".BookDetailsActivity"

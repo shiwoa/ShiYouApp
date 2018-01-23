@@ -1,1 +1,1 @@
-include ':app', ':sliderLibrary', ':magicindicator'
+include ':app', ':sliderLibrary', ':magicindicator', ':okhttputils', ':fbreader'

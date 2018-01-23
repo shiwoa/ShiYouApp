@@ -2,10 +2,11 @@ apply plugin: 'android-library'
 
 dependencies {
     //    compile fileTree(include: '*.jar', dir: 'libs')
-//    compile files('libs/android-support-v4.jar')
-    implementation files('libs/common.jar')
+    //    compile files('libs/android-support-v4.jar')
+    //    implementation files('libs/common.jar')
     implementation files('libs/Native_Libs2.jar')
     implementation androidDependencies.appcompat_v7
+    implementation files('libs/common.jar')
 }
 
 android {

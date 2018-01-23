@@ -83,11 +83,10 @@ public class BookAllClassActivity extends BaseActivity{
         }
         for (int i = 0;i<16; i++){
             if (type.equals("shiyou")){
-                dataList.add("石油列表测试标题"+i);
+                dataList.add("石油测试"+i);
             }else{
-                dataList.add("社区列表测试标题" + i);
+                dataList.add("社区测试" + i);
             }
-
         }
         bookAdapter = new BookAllClassListAdapter(BookAllClassActivity.this,dataList);
         gridView.setAdapter(bookAdapter);
